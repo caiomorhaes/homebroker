@@ -1,0 +1,14 @@
+
+target/
+.env
+.env.*
+!.env.example
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+*.log
+logs/
+Thumbs.db
+desktop.ini
+.DS_Store
