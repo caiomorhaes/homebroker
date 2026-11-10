@@ -3,14 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
     <groupId>io.github.caiomorhaes.homebroker</groupId>
     <artifactId>homebroker</artifactId>
     <version>0.1.0-SNAPSHOT</version>
-
-
     <packaging>pom</packaging>
-
 
     <modules>
         <module>homebroker-core</module>
@@ -25,5 +21,21 @@
     <properties>
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Todas as versões importantes do projeto ficam aqui no topo -->
+        <spring-boot.version>3.5.16</spring-boot.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- BOM do Spring Boot: importa a lista de versões testadas pelo time do Spring.
+                 Não adiciona nenhuma dependência, só define as versões (o "cardápio pronto") -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
